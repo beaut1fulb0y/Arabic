@@ -30,7 +30,7 @@ if __name__ == '__main__':
     dnn_path = os.path.join('runs', 'best.pth')
 
     model = ResNet()
-    state_dict = torch.load(dnn_path)
+    state_dict = torch.load(dnn_path, map_location)
     model.load_state_dict(state_dict=state_dict)
     model.to(device)
 
